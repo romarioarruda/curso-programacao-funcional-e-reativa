@@ -6,15 +6,19 @@ function composicao(...fns) {
     }
 }
 
-function toStr(value) {
+function tranformaEmString(value) {
     return value.toString()
 }
 
-function toReplace(text) {
+function separarPor4(text) {
     return text.replace(/(\d{4})/g, "$1 ")
 }
 
-const compositor = composicao(toStr, toReplace)
+function removerEspacos(value) {
+    return value.replace(/(\s)/g, "")
+}
+
+const compositor = composicao(tranformaEmString, separarPor4)
 
 const numero = 1234567891023145
 console.log(compositor(numero))
