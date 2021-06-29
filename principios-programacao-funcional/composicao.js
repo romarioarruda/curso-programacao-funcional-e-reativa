@@ -18,7 +18,10 @@ function removerEspacos(value) {
     return value.replace(/(\s)/g, "")
 }
 
-const compositor = composicao(tranformaEmString, separarPor4)
+const compositor = composicao(tranformaEmString, separarPor4, removerEspacos)
 
 const numero = 1234567891023145
+
+console.time('#tempo')
 console.log(compositor(numero))
+console.timeEnd('#tempo')
